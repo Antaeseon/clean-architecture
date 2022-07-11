@@ -8,6 +8,16 @@ public class IndividualIncomeTax {
 	private Long id;
 
 	/*
+	신고안내유형
+	 */
+	private String infoType;
+
+	/*
+	안내유형
+	 */
+	private String type;
+
+	/*
 	종합소득세 userId
 	 */
 	private Long userId;
