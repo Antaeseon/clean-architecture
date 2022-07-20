@@ -2,6 +2,7 @@ package com.ts.cleanarchitecture.tax.adapter.in.web;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,12 +16,12 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-class TaxController {
+class CreateTaxController {
 
 	private final CreateTaxUseCase createTaxUseCase;
 
 	@PostMapping("/tax")
-	IndividualIncomeTax createTax(@RequestBody CreateTaxDto createTaxDto){
+	ResponseEntity<IndividualIncomeTax> createTax(@RequestBody CreateTaxDto createTaxDto){
 
 		CreateTaxCommand createTaxCommand = new CreateTaxCommand(
 			createTaxDto.getUserId(),
@@ -29,7 +30,7 @@ class TaxController {
 			createTaxDto.getCost()
 		);
 
-		return createTaxUseCase.createTax(createTaxCommand);
+		return ResponseEntity.ok().body(createTaxUseCase.createTax(createTaxCommand));
 
 	}
 }
