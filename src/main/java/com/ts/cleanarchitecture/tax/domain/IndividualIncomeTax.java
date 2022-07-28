@@ -2,6 +2,11 @@ package com.ts.cleanarchitecture.tax.domain;
 
 import com.ts.cleanarchitecture.tax.application.port.in.CreateTaxCommand;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class IndividualIncomeTax {
 
 	/*
