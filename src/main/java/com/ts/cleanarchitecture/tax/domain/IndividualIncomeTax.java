@@ -5,65 +5,77 @@ import com.ts.cleanarchitecture.tax.application.port.in.CreateTaxCommand;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
 @AllArgsConstructor
 public class IndividualIncomeTax {
 
 	/*
 	종합소득세 id
 	 */
+	@Getter
 	private Long id;
 
 	/*
 	신고안내유형
 	 */
+	@Getter
 	private String infoType;
 
 	/*
 	안내유형
 	 */
+	@Getter
 	private String type;
 
 	/*
 	종합소득세 userId
 	 */
+	@Getter
 	private Long userId;
 	/*
 	매출액
 	 */
+	@Getter
 	private Long revenue;
 	/*
 	소득금액
 	 */
+	@Getter
 	private Long incomeAmount;
 	/*
 	소득공제
 	 */
+	@Getter
 	private Long incomeDeduction;
 	/*
 	과세표준
 	 */
+	@Getter
 	private Long taxBase;
 	/*
 	산출세액
 	 */
+	@Getter
 	private Long caculatedTax;
 	/*
 	세액공제
 	 */
+	@Getter
 	private Long taxCredit;
 	/*
 	가산세
 	 */
+	@Getter
 	private Long penalty;
 	/*
 	기납부세액
 	 */
+	@Getter
 	private Long prepaidTax;
 
 	/*
 	납부할세액
 	 */
+	@Getter
 	private Long taxPayment;
 
 	public boolean setFinancial(CreateTaxCommand command) {
