@@ -2,10 +2,14 @@ package com.ts.cleanarchitecture.tax.domain;
 
 import com.ts.cleanarchitecture.tax.application.port.in.CreateTaxCommand;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 public class IndividualIncomeTax {
 
 	/*
@@ -19,6 +23,7 @@ public class IndividualIncomeTax {
 	 */
 	@Getter
 	private String infoType;
+
 
 	/*
 	안내유형
@@ -89,6 +94,7 @@ public class IndividualIncomeTax {
 	소득금액 계산 ( 매출액 - 필요경비[ 주요경비 + 기타경비 ] )
 	 */
 	private boolean calculateIncomeAmount(CreateTaxCommand command) {
+
 		this.incomeAmount = this.revenue - command.getCost();
 		return incomeAmount > 0;
 	}
