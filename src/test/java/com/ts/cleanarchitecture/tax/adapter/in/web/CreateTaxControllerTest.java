@@ -36,13 +36,15 @@ class CreateTaxControllerTest {
 	void testCreateTax() throws Exception {
 		CreateTaxDto request = new CreateTaxDto(1L, "type", 1000L, 500L);
 
+		given(createTaxUseCase.createTax(any())).willReturn(new IndividualIncomeTax(
+			1L, "type", "type", 1L, 500L, 1000L, 1000L, 500L, 200L, 300L, 400L, 500L, 1000L
+		));
+
 		mockMvc.perform(post("/tax")
 			.header("Content-Type", "application/json")
 			.content(this.objectMapper.writeValueAsString(request)))
 			.andExpect(status().isOk());
 
-		// then(createTaxUseCase).should()
-		// 	.createTax(eq(new CreateTaxCommand(1L, "type", 100L, 500L)));
 	}
 
 }

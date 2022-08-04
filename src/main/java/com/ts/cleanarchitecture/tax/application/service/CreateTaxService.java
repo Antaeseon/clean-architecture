@@ -1,5 +1,7 @@
 package com.ts.cleanarchitecture.tax.application.service;
 
+import org.springframework.stereotype.Service;
+
 import com.ts.cleanarchitecture.tax.application.port.in.CreateTaxCommand;
 import com.ts.cleanarchitecture.tax.application.port.in.CreateTaxUseCase;
 import com.ts.cleanarchitecture.tax.application.port.out.CreateTaxPort;
@@ -7,6 +9,7 @@ import com.ts.cleanarchitecture.tax.domain.IndividualIncomeTax;
 
 import lombok.RequiredArgsConstructor;
 
+@Service
 @RequiredArgsConstructor
 public class CreateTaxService implements CreateTaxUseCase {
 
